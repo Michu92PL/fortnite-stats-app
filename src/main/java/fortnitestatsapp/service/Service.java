@@ -62,23 +62,27 @@ public class Service {
             userData.setTeamGamesPlayed(jsonObject.getJSONObject("stats").getJSONObject("p9").getJSONObject("matches").get("value").toString());
             userData.setTeamKills(jsonObject.getJSONObject("stats").getJSONObject("p9").getJSONObject("kills").get("value").toString());
 
-            userData.setCurrentSoloWins(jsonObject.getJSONObject("stats").getJSONObject("curr_p2").getJSONObject("top1").get("value").toString());
-            userData.setCurrentSoloKD(jsonObject.getJSONObject("stats").getJSONObject("curr_p2").getJSONObject("kd").get("value").toString());
-            userData.setCurrentSoloWinPercentage(jsonObject.getJSONObject("stats").getJSONObject("curr_p2").getJSONObject("winRatio").get("value").toString());
-            userData.setCurrentSoloGamesPlayed(jsonObject.getJSONObject("stats").getJSONObject("curr_p2").getJSONObject("matches").get("value").toString());
-            userData.setCurrentSoloKills(jsonObject.getJSONObject("stats").getJSONObject("curr_p2").getJSONObject("kills").get("value").toString());
-
-            userData.setCurrentDuoWins(jsonObject.getJSONObject("stats").getJSONObject("curr_p10").getJSONObject("top1").get("value").toString());
-            userData.setCurrentDuoKD(jsonObject.getJSONObject("stats").getJSONObject("curr_p10").getJSONObject("kd").get("value").toString());
-            userData.setCurrentDuoWinPercentage(jsonObject.getJSONObject("stats").getJSONObject("curr_p10").getJSONObject("winRatio").get("value").toString());
-            userData.setCurrentDuoGamesPlayed(jsonObject.getJSONObject("stats").getJSONObject("curr_p10").getJSONObject("matches").get("value").toString());
-            userData.setCurrentDuoKills(jsonObject.getJSONObject("stats").getJSONObject("curr_p10").getJSONObject("kills").get("value").toString());
-
-            userData.setCurrentTeamWins(jsonObject.getJSONObject("stats").getJSONObject("curr_p9").getJSONObject("top1").get("value").toString());
-            userData.setCurrentTeamKD(jsonObject.getJSONObject("stats").getJSONObject("curr_p9").getJSONObject("kd").get("value").toString());
-            userData.setCurrentTeamWinPercentage(jsonObject.getJSONObject("stats").getJSONObject("curr_p9").getJSONObject("winRatio").get("value").toString());
-            userData.setCurrentTeamGamesPlayed(jsonObject.getJSONObject("stats").getJSONObject("curr_p9").getJSONObject("matches").get("value").toString());
-            userData.setCurrentTeamKills(jsonObject.getJSONObject("stats").getJSONObject("curr_p9").getJSONObject("kills").get("value").toString());
+            if (jsonObject.getJSONObject("stats").has("curr_p2")) {
+                userData.setCurrentSoloWins(jsonObject.getJSONObject("stats").getJSONObject("curr_p2").getJSONObject("top1").get("value").toString());
+                userData.setCurrentSoloKD(jsonObject.getJSONObject("stats").getJSONObject("curr_p2").getJSONObject("kd").get("value").toString());
+                userData.setCurrentSoloWinPercentage(jsonObject.getJSONObject("stats").getJSONObject("curr_p2").getJSONObject("winRatio").get("value").toString());
+                userData.setCurrentSoloGamesPlayed(jsonObject.getJSONObject("stats").getJSONObject("curr_p2").getJSONObject("matches").get("value").toString());
+                userData.setCurrentSoloKills(jsonObject.getJSONObject("stats").getJSONObject("curr_p2").getJSONObject("kills").get("value").toString());
+            }
+            if (jsonObject.getJSONObject("stats").has("curr_p10")) {
+                userData.setCurrentDuoWins(jsonObject.getJSONObject("stats").getJSONObject("curr_p10").getJSONObject("top1").get("value").toString());
+                userData.setCurrentDuoKD(jsonObject.getJSONObject("stats").getJSONObject("curr_p10").getJSONObject("kd").get("value").toString());
+                userData.setCurrentDuoWinPercentage(jsonObject.getJSONObject("stats").getJSONObject("curr_p10").getJSONObject("winRatio").get("value").toString());
+                userData.setCurrentDuoGamesPlayed(jsonObject.getJSONObject("stats").getJSONObject("curr_p10").getJSONObject("matches").get("value").toString());
+                userData.setCurrentDuoKills(jsonObject.getJSONObject("stats").getJSONObject("curr_p10").getJSONObject("kills").get("value").toString());
+            }
+            if (jsonObject.getJSONObject("stats").has("curr_p9")) {
+                userData.setCurrentTeamWins(jsonObject.getJSONObject("stats").getJSONObject("curr_p9").getJSONObject("top1").get("value").toString());
+                userData.setCurrentTeamKD(jsonObject.getJSONObject("stats").getJSONObject("curr_p9").getJSONObject("kd").get("value").toString());
+                userData.setCurrentTeamWinPercentage(jsonObject.getJSONObject("stats").getJSONObject("curr_p9").getJSONObject("winRatio").get("value").toString());
+                userData.setCurrentTeamGamesPlayed(jsonObject.getJSONObject("stats").getJSONObject("curr_p9").getJSONObject("matches").get("value").toString());
+                userData.setCurrentTeamKills(jsonObject.getJSONObject("stats").getJSONObject("curr_p9").getJSONObject("kills").get("value").toString());
+            }
         } catch (Exception e) {
             return userData;
         }
