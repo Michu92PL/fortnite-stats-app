@@ -9,19 +9,19 @@ import org.json.JSONObject;
 
 public class Service {
 
-    private String URL = "https://api.fortnitetracker.com/v1/profile/pc/";
-    private String name;
+    private String URL = "https://api.fortnitetracker.com/v1/profile/";
+    //private String platform;
 
     private String keyName = "TRN-Api-Key";
     private String keyValue = "fec99ff2-666e-4c57-a42d-72a296672893";
     private HttpResponse<JsonNode> response;
 
 
-    public UserData getUserData(String name) {
+    public UserData getUserData(String platform, String name) {
 
 
         try {
-            response = Unirest.get(URL + name)
+            response = Unirest.get(URL + platform + "/" + name)
                     .header(keyName, keyValue)
                     .asJson();
         } catch (UnirestException e) {
