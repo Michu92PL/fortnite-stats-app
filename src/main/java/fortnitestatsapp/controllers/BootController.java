@@ -2,6 +2,7 @@ package fortnitestatsapp.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
 public class BootController {
@@ -11,8 +12,11 @@ public class BootController {
 
     @FXML
     public void initialize() {
+        loadMenuView();
+    }
 
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MainView.fxml"));
+    private void loadMenuView() {
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MenuView.fxml"));
         StackPane stackPane = null;
         try {
             stackPane = loader.load();
@@ -20,6 +24,13 @@ public class BootController {
             e.printStackTrace();
         }
 
-        bootStackPane.getChildren().add(stackPane);
+        MenuController menuController = loader.getController();
+        menuController.setBootController(this);
+        setScreen(stackPane);
+    }
+
+    public void setScreen(Pane pane) {
+        bootStackPane.getChildren().clear();
+        bootStackPane.getChildren().add(pane);
     }
 }
