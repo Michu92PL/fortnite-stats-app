@@ -2,8 +2,8 @@ package fortnitestatsapp.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 
 public class BootController {
 
@@ -23,6 +23,14 @@ public class BootController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        Image image = new Image("/img/menuBottomv2Final.png", 800, 600, false, true);
+
+        BackgroundImage myBI = new BackgroundImage(image,
+                BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+
+        stackPane.setBackground(new Background(myBI));
 
         MenuController menuController = loader.getController();
         menuController.setBootController(this);
