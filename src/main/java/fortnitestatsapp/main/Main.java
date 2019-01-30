@@ -11,12 +11,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
     public static void main(String[] args) {
-
         launch(args);
-
-        //Service service = new Service();
-        //UserData user = service.getUserData("pc","Yoghurtt");
-        //System.out.println(user);
     }
 
     @Override
@@ -28,8 +23,12 @@ public class Main extends Application {
         primaryStage.getIcons().add(new Image(this.getClass().getResourceAsStream("/img/icon.png")));
 
         //primaryStage.resizableProperty().setValue(Boolean.FALSE);
-        primaryStage.setResizable(false);
         primaryStage.setScene(scene);
+        primaryStage.setMinWidth(800);
+        primaryStage.setMaxWidth(800);
+        primaryStage.setMinHeight(600);
+        primaryStage.setMaxHeight(600);
+        primaryStage.setResizable(false);
         primaryStage.setTitle("Fortnite stats");
         primaryStage.show();
     }
