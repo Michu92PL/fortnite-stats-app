@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
@@ -13,7 +14,10 @@
          <children>
             <VBox prefHeight="250.0" prefWidth="100.0">
                <children>
-                  <ImageView fitHeight="250.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="250.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/menuTopFinalv2.jpg" />
+                     </image></ImageView>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="350.0" prefWidth="800.0" spacing="30.0">
