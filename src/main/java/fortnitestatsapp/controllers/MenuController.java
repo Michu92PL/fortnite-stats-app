@@ -19,7 +19,8 @@ public class MenuController {
         catch (Exception e){
             e.printStackTrace();
         }
-
+        StatsController statsController = loader.getController();
+        statsController.setBootController(bootController);
         bootController.setScreen(pane);
 
     }
