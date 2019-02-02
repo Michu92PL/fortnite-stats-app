@@ -1,0 +1,15 @@
+.labels{
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-weight: bold;
+    -fx-font-style: Italic;
+    -fx-font-size: 18px;
+}
+
+.labels_mid{
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-weight: bold;
+    -fx-font-style: Italic;
+    -fx-font-size: 20px;
+    -fx-underline: true;
+
+}
