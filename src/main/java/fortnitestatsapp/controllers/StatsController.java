@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
 public class StatsController {
@@ -148,6 +149,7 @@ public class StatsController {
         choiceBox.getItems().addAll("PC","PSN", "XBL");
         choiceBox.getSelectionModel().selectFirst();
         setAllLabelsEmpty();
+        setBackgroundImage();
 
     }
 
@@ -175,6 +177,14 @@ public class StatsController {
             return false;
         }
         return true;
+    }
+
+    private void setBackgroundImage() {
+        Image image4 = new Image("/img/statsbgcuttransparent.jpg");
+        BackgroundImage myBI = new BackgroundImage(image4,
+                BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        pane.setBackground(new Background(myBI));
     }
 
     private void setAllLabelsEmpty() {
