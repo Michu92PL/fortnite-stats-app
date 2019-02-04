@@ -2,14 +2,26 @@ package fortnitestatsapp.controllers;
 
 import fortnitestatsapp.model.UserData;
 import fortnitestatsapp.service.Service;
+import javafx.animation.PauseTransition;
+import javafx.application.Platform;
+import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
+import javafx.util.Duration;
+
+import java.beans.EventHandler;
 
 public class StatsController {
+
+    @FXML
+    private Button showStatsButton;
 
     @FXML
     private Pane pane;
@@ -146,34 +158,43 @@ public class StatsController {
     @FXML
     public void initialize() {
         this.service = new Service();
-        choiceBox.getItems().addAll("PC","PSN", "XBL");
+        choiceBox.getItems().addAll("PC", "PSN", "XBL");
         choiceBox.getSelectionModel().selectFirst();
         setAllLabelsEmpty();
         setBackgroundImage();
+        //nameTextField.requestFocus();
+        showStatsButton.setDefaultButton(true);
 
+        showStatsButton.disableProperty().bind(
+                Bindings.isEmpty(nameTextField.textProperty()));
+
+        Platform.runLater(() ->
+                nameTextField.requestFocus()
+        );
     }
 
+
     @FXML
-    public void showStats(){
-        if(checkTextField()) {
+    public void showStats() {
+        if (checkTextField()) {
             UserData user = service.getUserData(choiceBox.getValue().toLowerCase(), nameTextField.getText());
-            if(checkUserData(user)) {
+            if (checkUserData(user)) {
                 setAllLabels(user);
-            }
-            else{
+            } else {
                 setAllLabelsEmpty();
             }
         }
     }
+
     private boolean checkUserData(UserData user) {
-        if(user.getAccountID() == null){
+        if (user.getAccountID() == null) {
             return false;
         }
         return true;
     }
 
-    private boolean checkTextField(){
-        if(nameTextField.getText() == null || nameTextField.getText().trim().isEmpty()){
+    private boolean checkTextField() {
+        if (nameTextField.getText() == null || nameTextField.getText().trim().isEmpty()) {
             return false;
         }
         return true;
@@ -189,7 +210,7 @@ public class StatsController {
 
     private void setAllLabelsEmpty() {
         accountIDLabel.setText("-");
-        epicNameLabel.setText("Nie znaleziono");
+        epicNameLabel.setText("Not Found");
         totalWinsLabel.setText("-");
         totalScoreLabel.setText("-");
         totalMatchesPlayedLabel.setText("-");
@@ -231,6 +252,7 @@ public class StatsController {
     public void setBootController(BootController bootController) {
         this.bootController = bootController;
     }
+
     private void setAllLabels(UserData user) {
         accountIDLabel.setText(user.getAccountID());
         epicNameLabel.setText(user.getEpicName());
