@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
@@ -13,17 +14,21 @@
 
 <Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fortnitestatsapp.controllers.StatsController">
    <children>
-      <Button layoutX="715.0" layoutY="523.0" mnemonicParsing="false" text="Menu">
+      <Button layoutX="661.0" layoutY="491.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="85.0" stylesheets="@../css/buttons.css" text="Menu">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
+         <styleClass>
+            <String fx:value="buttons_small" />
+            <String fx:value="my_button" />
+         </styleClass>
       </Button>
       <HBox alignment="CENTER" layoutX="23.0" layoutY="20.0" prefHeight="66.0" prefWidth="438.0" spacing="10.0">
          <children>
             <VBox alignment="CENTER" />
             <TextField fx:id="nameTextField" prefHeight="31.0" prefWidth="168.0" />
             <ChoiceBox fx:id="choiceBox" prefHeight="31.0" prefWidth="83.0" />
-            <Button mnemonicParsing="false" onAction="#showStats" prefHeight="47.0" prefWidth="187.0" text="Pokaż statsy!">
+            <Button fx:id="showStatsButton" mnemonicParsing="false" onAction="#showStats" prefHeight="47.0" prefWidth="187.0" styleClass="stats_button" stylesheets="@../css/buttons.css" text="Show stats!">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -33,9 +38,9 @@
       <Line endX="445.0" layoutX="330.0" layoutY="91.0" startX="-306.0" strokeWidth="2.0" />
       <HBox layoutX="474.0" layoutY="40.0" spacing="8.0">
          <children>
-            <Label alignment="CENTER" text="Nazwa konta:">
+            <Label alignment="CENTER" text="Acc name:">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Label>
             <Label fx:id="epicNameLabel" alignment="CENTER" contentDisplay="CENTER">
@@ -49,7 +54,7 @@
          <children>
             <HBox alignment="CENTER" spacing="40.0">
                <children>
-                  <Label alignment="CENTER" text="ŻYCIOWE" textAlignment="CENTER" underline="true">
+                  <Label alignment="CENTER" text="Lifetime" textAlignment="CENTER" underline="true">
                      <font>
                         <Font name="Comic Sans MS Bold Italic" size="26.0" />
                      </font>
@@ -61,12 +66,12 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" spacing="10.0">
                <children>
-                  <Label styleClass="labels" stylesheets="@../css/styles.css" text="Wins:">
+                  <Label styleClass="labels" stylesheets="@../css/labels.css" text="Wins:">
                      <font>
                         <Font name="Comic Sans MS Bold Italic" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="totalWinsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                  <Label fx:id="totalWinsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -75,12 +80,12 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" spacing="10.0">
                <children>
-                  <Label styleClass="labels" stylesheets="@../css/styles.css" text="Score:">
+                  <Label styleClass="labels" stylesheets="@../css/labels.css" text="Score:">
                      <font>
                         <Font name="Comic Sans MS Bold Italic" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="totalScoreLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                  <Label fx:id="totalScoreLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -89,12 +94,12 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" spacing="10.0">
                <children>
-                  <Label styleClass="labels" stylesheets="@../css/styles.css" text="Matches:">
+                  <Label styleClass="labels" stylesheets="@../css/labels.css" text="Matches:">
                      <font>
                         <Font name="Comic Sans MS Bold Italic" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="totalMatchesPlayedLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                  <Label fx:id="totalMatchesPlayedLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -103,12 +108,12 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" spacing="10.0">
                <children>
-                  <Label styleClass="labels" stylesheets="@../css/styles.css" text="Win%:">
+                  <Label styleClass="labels" stylesheets="@../css/labels.css" text="Win%:">
                      <font>
                         <Font name="System Bold Italic" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="totalWinPercentageLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                  <Label fx:id="totalWinPercentageLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -117,12 +122,12 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" spacing="10.0">
                <children>
-                  <Label styleClass="labels" stylesheets="@../css/styles.css" text="Kills:">
+                  <Label styleClass="labels" stylesheets="@../css/labels.css" text="Kills:">
                      <font>
                         <Font name="Comic Sans MS Bold Italic" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="totalKillsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                  <Label fx:id="totalKillsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -131,12 +136,12 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" spacing="10.0">
                <children>
-                  <Label styleClass="labels" stylesheets="@../css/styles.css" text="K/D:">
+                  <Label styleClass="labels" stylesheets="@../css/labels.css" text="K/D:">
                      <font>
                         <Font name="Comic Sans MS Bold Italic" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="totalKDLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                  <Label fx:id="totalKDLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -147,7 +152,7 @@
       </VBox>
       <VBox alignment="CENTER" layoutX="253.0" layoutY="99.0">
          <children>
-            <Label alignment="CENTER" text="OGÓŁEM" underline="true">
+            <Label alignment="CENTER" text="Total" underline="true">
                <font>
                   <Font name="Comic Sans MS Bold Italic" size="24.0" />
                </font>
@@ -158,7 +163,7 @@
                      <children>
                         <HBox alignment="CENTER_LEFT">
                            <children>
-                              <Label styleClass="labels_mid" stylesheets="@../css/styles.css" text="Solo" textAlignment="CENTER" underline="true">
+                              <Label styleClass="labels_mid" stylesheets="@../css/labels.css" text="Solo" textAlignment="CENTER" underline="true">
                                  <font>
                                     <Font name="Comic Sans MS Bold Italic" size="17.0" />
                                  </font>
@@ -170,12 +175,12 @@
                         </HBox>
                         <HBox alignment="CENTER_LEFT" spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Wins:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Wins:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="soloWinsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="soloWinsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -184,12 +189,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="K/D:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="K/D:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="soloKDLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="soloKDLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -198,12 +203,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Win%:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Win%:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="soloWinPercentageLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="soloWinPercentageLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -212,12 +217,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Kills:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Kills:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="soloKillsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="soloKillsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -226,12 +231,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Matches:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Matches:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="soloMatchesPlayedLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="soloMatchesPlayedLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -244,7 +249,7 @@
                      <children>
                         <HBox>
                            <children>
-                              <Label styleClass="labels_mid" stylesheets="@../css/styles.css" text="Duo" textAlignment="CENTER" underline="true">
+                              <Label styleClass="labels_mid" stylesheets="@../css/labels.css" text="Duo" textAlignment="CENTER" underline="true">
                                  <font>
                                     <Font name="Comic Sans MS Bold Italic" size="17.0" />
                                  </font>
@@ -256,12 +261,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Wins:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Wins:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="duoWinsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="duoWinsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -270,12 +275,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="K/D:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="K/D:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="duoKDLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="duoKDLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -284,12 +289,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Win%:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Win%:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="duoWinPercentageLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="duoWinPercentageLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -298,12 +303,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Kills:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Kills:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="duoKillsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="duoKillsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -312,12 +317,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Matches:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Matches:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="duoMatchesPlayedLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="duoMatchesPlayedLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -330,7 +335,7 @@
                      <children>
                         <HBox>
                            <children>
-                              <Label styleClass="labels_mid" stylesheets="@../css/styles.css" text="Squads" textAlignment="CENTER" underline="true">
+                              <Label styleClass="labels_mid" stylesheets="@../css/labels.css" text="Squads" textAlignment="CENTER" underline="true">
                                  <font>
                                     <Font name="Comic Sans MS Bold Italic" size="17.0" />
                                  </font>
@@ -342,12 +347,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Wins:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Wins:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="teamWinsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="teamWinsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -356,12 +361,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="K/D:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="K/D:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="teamKDLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="teamKDLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -370,12 +375,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Win%:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Win%:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="teamWinPercentageLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="teamWinPercentageLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -384,12 +389,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Kills:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Kills:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="teamKillsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="teamKillsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -398,12 +403,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Matches:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Matches:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="teamMatchesPlayedLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="teamMatchesPlayedLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -419,9 +424,9 @@
             </HBox>
          </children>
       </VBox>
-      <VBox alignment="CENTER" layoutX="105.0" layoutY="332.0">
+      <VBox alignment="CENTER" layoutX="51.0" layoutY="333.0">
          <children>
-            <Label alignment="CENTER" text="OBECNY SEZON" underline="true">
+            <Label alignment="CENTER" text="Current season" underline="true">
                <font>
                   <Font name="Comic Sans MS Bold Italic" size="24.0" />
                </font>
@@ -432,7 +437,7 @@
                      <children>
                         <HBox>
                            <children>
-                              <Label styleClass="labels_mid" stylesheets="@../css/styles.css" text="Solo" textAlignment="CENTER" underline="true">
+                              <Label styleClass="labels_mid" stylesheets="@../css/labels.css" text="Solo" textAlignment="CENTER" underline="true">
                                  <font>
                                     <Font name="Comic Sans MS Bold Italic" size="17.0" />
                                  </font>
@@ -444,12 +449,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Wins:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Wins:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="currentSoloWinsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="currentSoloWinsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -458,12 +463,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="K/D:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="K/D:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="currentSoloKDLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="currentSoloKDLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -472,12 +477,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Win%:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Win%:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="currentSoloWinPercentageLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="currentSoloWinPercentageLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -486,12 +491,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Kills:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Kills:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="currentSoloKillsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="currentSoloKillsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -500,12 +505,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Matches:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Matches:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="currentSoloMatchesPlayedLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="currentSoloMatchesPlayedLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -518,7 +523,7 @@
                      <children>
                         <HBox>
                            <children>
-                              <Label styleClass="labels_mid" stylesheets="@../css/styles.css" text="Duo" textAlignment="CENTER" underline="true">
+                              <Label styleClass="labels_mid" stylesheets="@../css/labels.css" text="Duo" textAlignment="CENTER" underline="true">
                                  <font>
                                     <Font name="Comic Sans MS Bold Italic" size="17.0" />
                                  </font>
@@ -530,12 +535,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Wins:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Wins:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="currentDuoWinsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="currentDuoWinsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -544,12 +549,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="K/D:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="K/D:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="currentDuoKDLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="currentDuoKDLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -558,12 +563,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Win%:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Win%:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="currentDuoWinPercentageLabel" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="currentDuoWinPercentageLabel" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -572,12 +577,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Kills:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Kills:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="currentDuoKillsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="currentDuoKillsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -586,12 +591,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Matches:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Matches:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="currentDuoMatchesPlayedLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="currentDuoMatchesPlayedLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -604,7 +609,7 @@
                      <children>
                         <HBox>
                            <children>
-                              <Label styleClass="labels_mid" stylesheets="@../css/styles.css" text="Squads" textAlignment="CENTER" underline="true">
+                              <Label styleClass="labels_mid" stylesheets="@../css/labels.css" text="Squads" textAlignment="CENTER" underline="true">
                                  <font>
                                     <Font name="Comic Sans MS Bold Italic" size="17.0" />
                                  </font>
@@ -616,12 +621,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Wins:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Wins:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="currentTeamWinsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="currentTeamWinsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -630,12 +635,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="K/D:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="K/D:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="currentTeamKDLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="currentTeamKDLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -644,12 +649,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Win%:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Win%:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="currentTeamWinPercentageLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="currentTeamWinPercentageLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -658,12 +663,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Kills:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Kills:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="currentTeamKillsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="currentTeamKillsLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -672,12 +677,12 @@
                         </HBox>
                         <HBox spacing="10.0">
                            <children>
-                              <Label styleClass="labels" stylesheets="@../css/styles.css" text="Matches:">
+                              <Label styleClass="labels" stylesheets="@../css/labels.css" text="Matches:">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="currentTeamMatchesPlayedLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/styles.css">
+                              <Label fx:id="currentTeamMatchesPlayedLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels" stylesheets="@../css/labels.css">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -695,7 +700,7 @@
       </VBox>
       <Line endX="395.0" layoutX="363.0" layoutY="314.0" startX="-323.0" />
       <Line endX="-17.0" endY="172.0" layoutX="259.0" layoutY="118.0" startX="-17.0" startY="36.0" />
-      <HBox layoutX="23.0" layoutY="546.0" spacing="5.0">
+      <HBox layoutX="40.0" layoutY="540.0" spacing="5.0">
          <children>
             <Label text="Account ID:">
                <font>
@@ -709,6 +714,10 @@
             </Label>
          </children>
       </HBox>
-      <Button layoutX="713.0" layoutY="476.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="661.0" layoutY="445.0" mnemonicParsing="false" stylesheets="@../css/buttons.css" text="Button">
+         <styleClass>
+            <String fx:value="buttons_small" />
+            <String fx:value="my_button" />
+         </styleClass></Button>
    </children>
 </Pane>
