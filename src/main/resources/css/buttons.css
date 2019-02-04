@@ -1,0 +1,83 @@
+.buttons_main{
+    -fx-background-color:
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-font-weight: bold;
+    -fx-font-family: "Arial";
+    -fx-text-fill: linear-gradient(black, #1a1e23);
+    -fx-font-size: 20px;
+    -fx-padding: 10 20 10 20;
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-border-radius: 3;
+}
+
+.buttons_small{
+    -fx-background-color:
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-font-weight: bold;
+    -fx-font-family: "Arial";
+    -fx-text-fill: linear-gradient(black, #1a1e23);
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-border-radius: 3;
+}
+
+.my_button:hover {
+    -fx-background-color:
+            linear-gradient(#3f4b54 0%, #283237 20%, #29363b 100%),
+            linear-gradient(#35464b, #242c32),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-text-fill: linear-gradient(white, #737dd0);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-rotate: 4;
+}
+
+.my_button:pressed {
+    -fx-background-color:
+            linear-gradient(#3f4b54 0%, #283237 20%, #34474c 100%),
+            linear-gradient(#455f64, #242c32),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-text-fill: linear-gradient(white, #737dd0);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+}
+
+.stats_button{
+    -fx-background-color:
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-font-weight: bold;
+    -fx-font-family: "Arial";
+    -fx-text-fill: linear-gradient(black, #1a1e23);
+    -fx-font-size: 20px;
+    -fx-padding: 10 20 10 20;
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-border-radius: 3;
+}
+
+.stats_button:hover {
+    -fx-background-color:
+            linear-gradient(#3f4b54 0%, #283237 20%, #29363b 100%),
+            linear-gradient(#35464b, #242c32),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-text-fill: linear-gradient(white, #737dd0);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-rotate: 2;
+}
+
+.stats_button:pressed {
+    -fx-background-color:
+            linear-gradient(#3f4b54 0%, #283237 20%, #34474c 100%),
+            linear-gradient(#455f64, #242c32),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-text-fill: linear-gradient(white, #737dd0);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+}
