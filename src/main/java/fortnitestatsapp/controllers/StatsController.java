@@ -5,6 +5,8 @@ import fortnitestatsapp.service.Service;
 import javafx.animation.PauseTransition;
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -28,6 +30,11 @@ public class StatsController {
 
     @FXML
     private Button showStatsButton;
+
+    @FXML
+    private Button comparisonButton;
+
+    private BooleanProperty userExist;
 
     @FXML
     private Pane pane;
@@ -163,6 +170,7 @@ public class StatsController {
 
     @FXML
     public void initialize() {
+
         this.service = new Service();
         choiceBox.getItems().addAll("PC", "PSN", "XBL");
         choiceBox.getSelectionModel().selectFirst();
@@ -171,8 +179,12 @@ public class StatsController {
         //nameTextField.requestFocus();
         showStatsButton.setDefaultButton(true);
 
+        userExist = new SimpleBooleanProperty(false);
+
         showStatsButton.disableProperty().bind(
                 Bindings.isEmpty(nameTextField.textProperty()));
+
+        comparisonButton.disableProperty().bind(userExist.not());
 
         Platform.runLater(() ->
                 nameTextField.requestFocus()
@@ -195,8 +207,10 @@ public class StatsController {
 
     private boolean checkUserData(UserData user) {
         if (user.getAccountID() == null) {
+            setUserExist(false);
             return false;
         }
+        setUserExist(true);
         return true;
     }
 
@@ -268,6 +282,14 @@ public class StatsController {
 
     public void setBootController(BootController bootController) {
         this.bootController = bootController;
+    }
+
+    public void setCurrentUser(UserData currentUser) {
+        this.currentUser = currentUser;
+    }
+
+    public void setUserExist(boolean userExist) {
+        this.userExist.set(userExist);
     }
 
     private void setAllLabels(UserData user) {
