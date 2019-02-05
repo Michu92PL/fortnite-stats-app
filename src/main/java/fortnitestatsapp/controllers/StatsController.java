@@ -6,6 +6,8 @@ import javafx.animation.PauseTransition;
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -14,11 +16,15 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.beans.EventHandler;
+import java.io.IOException;
 
 public class StatsController {
+
+    private UserData currentUser;
 
     @FXML
     private Button showStatsButton;
@@ -178,6 +184,7 @@ public class StatsController {
     public void showStats() {
         if (checkTextField()) {
             UserData user = service.getUserData(choiceBox.getValue().toLowerCase(), nameTextField.getText());
+            this.currentUser = user;
             if (checkUserData(user)) {
                 setAllLabels(user);
             } else {
@@ -206,6 +213,16 @@ public class StatsController {
                 BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         pane.setBackground(new Background(myBI));
+    }
+
+    @FXML
+    public void openMenu(){
+        bootController.loadMenuView();
+    }
+
+    @FXML
+    public void openComparison(){
+        bootController.openComparison(currentUser);
     }
 
     private void setAllLabelsEmpty() {
