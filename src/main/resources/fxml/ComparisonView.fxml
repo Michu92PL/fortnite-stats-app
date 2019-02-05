@@ -1,6 +1,454 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.Pane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" />
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fortnitestatsapp.controllers.ComparisonController">
+   <children>
+      <VBox prefHeight="454.0" prefWidth="440.0">
+         <children>
+            <HBox prefHeight="113.0" prefWidth="440.0">
+               <children>
+                  <StackPane>
+                     <children>
+                        <VBox>
+                           <children>
+                              <HBox alignment="CENTER" prefWidth="440.0" spacing="30.0">
+                                 <children>
+                                    <TextField />
+                                    <TextField />
+                                 </children>
+                                 <padding>
+                                    <Insets top="20.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER" prefWidth="440.0" spacing="75.0">
+                                 <children>
+                                    <VBox>
+                                       <children>
+                                          <ChoiceBox prefWidth="60.0" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <Button mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" styleClass="stats_button" stylesheets="@../css/buttons.css" text="Button" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_RIGHT">
+                                       <children>
+                                          <ChoiceBox prefWidth="60.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+            <VBox>
+               <children>
+                  <HBox alignment="TOP_CENTER" prefWidth="440.0" spacing="70.0" styleClass="border_top" stylesheets="@../css/containters.css">
+                     <children>
+                        <Label text="player1">
+                           <font>
+                              <Font name="System Bold Italic" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label text="player2">
+                           <font>
+                              <Font name="System Bold Italic" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefWidth="440.0" styleClass="border_top_bottom" stylesheets="@../css/containters.css">
+                     <children>
+                        <Label styleClass="labels_comp_large" stylesheets="@../css/labels.css" text="Lifetime stats" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefWidth="440.0" spacing="20.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="K/D" />
+                              <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Wins" />
+                              <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Matches" />
+                              <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Win%" />
+                              <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Kills" />
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER" prefWidth="200.0" spacing="30.0">
+                           <children>
+                              <VBox alignment="TOP_RIGHT" prefWidth="100.0">
+                                 <children>
+                                    <HBox alignment="TOP_RIGHT">
+                                       <children>
+                                          <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="TOP_RIGHT">
+                                       <children>
+                                          <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="TOP_RIGHT">
+                                       <children>
+                                          <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="TOP_RIGHT">
+                                       <children>
+                                          <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="TOP_RIGHT">
+                                       <children>
+                                          <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox prefWidth="100.0">
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <VBox alignment="TOP_RIGHT">
+                           <children>
+                              <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="K/D" />
+                              <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Wins" />
+                              <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Matches" />
+                              <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Win%" />
+                              <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Kills" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox alignment="TOP_CENTER" prefWidth="440.0" styleClass="border_top_bottom" stylesheets="@../css/containters.css">
+               <children>
+                  <Label styleClass="labels_comp_large" stylesheets="@../css/labels.css" text="Solo" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="440.0" spacing="20.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="K/D" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Wins" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Matches" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Win%" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Kills" />
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <VBox alignment="TOP_RIGHT" prefWidth="100.0">
+                           <children>
+                              <HBox alignment="TOP_RIGHT">
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT">
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT">
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT">
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT">
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="100.0">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox alignment="TOP_RIGHT">
+                     <children>
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="K/D" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Wins" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Matches" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Win%" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Kills" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefWidth="440.0" styleClass="border_top_bottom" stylesheets="@../css/containters.css">
+               <children>
+                  <Label styleClass="labels_comp_large" stylesheets="@../css/labels.css" text="Duo" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="440.0" spacing="20.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="K/D" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Wins" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Matches" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Win%" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Kills" />
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <VBox alignment="TOP_RIGHT" prefWidth="100.0">
+                           <children>
+                              <HBox alignment="TOP_RIGHT">
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT">
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT">
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT">
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT">
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="100.0">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox alignment="TOP_RIGHT">
+                     <children>
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="K/D" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Wins" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Matches" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Win%" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Kills" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefWidth="440.0" styleClass="border_top_bottom" stylesheets="@../css/containters.css">
+               <children>
+                  <Label styleClass="labels_comp_large" stylesheets="@../css/labels.css" text="Squads" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="440.0" spacing="20.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="K/D" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Wins" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Matches" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Win%" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Kills" />
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" prefWidth="200.0" spacing="30.0">
+                     <children>
+                        <VBox alignment="TOP_RIGHT" prefWidth="100.0">
+                           <children>
+                              <HBox alignment="TOP_RIGHT">
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT">
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT">
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT">
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT">
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="100.0">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox alignment="TOP_RIGHT">
+                     <children>
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="K/D" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Wins" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Matches" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Win%" />
+                        <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" text="Kills" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="200.0" spacing="20.0" styleClass="border_top" stylesheets="@../css/containters.css">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="243.0" spacing="5.0">
+                     <children>
+                        <Label styleClass="labels_status" stylesheets="@../css/labels.css" text="Status:" />
+                        <Label styleClass="labels_status" stylesheets="@../css/labels.css" />
+                     </children>
+                  </HBox>
+                  <Button mnemonicParsing="false" prefHeight="43.0" prefWidth="145.0" styleClass="stats_button" stylesheets="@../css/buttons.css" text="Close" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="20.0" top="15.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</StackPane>
