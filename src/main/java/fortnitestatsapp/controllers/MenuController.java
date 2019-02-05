@@ -26,17 +26,7 @@ public class MenuController {
     }
 
     public void openComparison() {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/ComparisonView.fxml"));
-        Pane pane = null;
-        try{
-            pane = loader.load();
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
-
-        bootController.setScreen(pane);
-
+        bootController.openComparison();
     }
 
     public void exit() {
