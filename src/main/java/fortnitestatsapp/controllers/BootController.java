@@ -1,9 +1,14 @@
 package fortnitestatsapp.controllers;
 
+import fortnitestatsapp.model.UserData;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class BootController {
 
@@ -15,7 +20,31 @@ public class BootController {
         loadMenuView();
     }
 
-    private void loadMenuView() {
+    public void openComparison(UserData player1){
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/ComparisonView.fxml"));
+        StackPane stackPane = null;
+        try {
+            stackPane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        ComparisonController controller = loader.getController();
+        controller.setPlayer1(player1);
+
+        Stage stage = new Stage();
+
+        Scene scene = new Scene(stackPane);
+        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("/img/icon.png")));
+        //primaryStage.resizableProperty().setValue(Boolean.FALSE);
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.setTitle("Comparison mode");
+        stage.show();
+
+    }
+
+    public void loadMenuView() {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MenuView.fxml"));
         StackPane stackPane = null;
         try {
@@ -40,5 +69,25 @@ public class BootController {
     public void setScreen(Pane pane) {
         bootStackPane.getChildren().clear();
         bootStackPane.getChildren().add(pane);
+    }
+
+    public void openComparison(){
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/ComparisonView.fxml"));
+        StackPane stackPane = null;
+        try {
+            stackPane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Stage stage = new Stage();
+
+        Scene scene = new Scene(stackPane);
+        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("/img/icon.png")));
+        //primaryStage.resizableProperty().setValue(Boolean.FALSE);
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.setTitle("Comparison mode");
+        stage.show();
     }
 }
