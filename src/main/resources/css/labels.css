@@ -1,0 +1,34 @@
+.labels{
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-weight: bold;
+    -fx-font-style: Italic;
+    -fx-font-size: 18px;
+}
+
+.labels_mid{
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-weight: bold;
+    -fx-font-style: Italic;
+    -fx-font-size: 20px;
+    -fx-underline: true;
+}
+
+.labels_comp_sm{
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-weight: bold;
+    -fx-font-style: Italic;
+    -fx-font-size: 15px;
+}
+
+.labels_comp_large{
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-weight: bold;
+    -fx-font-style: Italic;
+    -fx-font-size: 20px;
+}
+
+.labels_status{
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
