@@ -14,7 +14,7 @@
 
 <Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fortnitestatsapp.controllers.StatsController">
    <children>
-      <Button layoutX="661.0" layoutY="491.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="85.0" stylesheets="@../css/buttons.css" text="Menu">
+      <Button layoutX="638.0" layoutY="490.0" mnemonicParsing="false" onAction="#openMenu" prefHeight="36.0" prefWidth="104.0" stylesheets="@../css/buttons.css" text="Menu">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -714,7 +714,7 @@
             </Label>
          </children>
       </HBox>
-      <Button layoutX="661.0" layoutY="445.0" mnemonicParsing="false" stylesheets="@../css/buttons.css" text="Button">
+      <Button layoutX="638.0" layoutY="445.0" mnemonicParsing="false" onAction="#openComparison" prefHeight="36.0" prefWidth="104.0" stylesheets="@../css/buttons.css" text="Compare">
          <styleClass>
             <String fx:value="buttons_small" />
             <String fx:value="my_button" />
