@@ -1,0 +1,11 @@
+.border_top_bottom{
+    -fx-border-style: solid none solid none;
+    -fx-border-width: 2;
+    -fx-border-color: black;
+}
+
+.border_top{
+    -fx-border-style: solid none none none;
+    -fx-border-width: 3;
+    -fx-border-color: black;
+}
