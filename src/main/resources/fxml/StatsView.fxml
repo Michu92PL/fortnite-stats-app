@@ -714,7 +714,7 @@
             </Label>
          </children>
       </HBox>
-      <Button layoutX="638.0" layoutY="445.0" mnemonicParsing="false" onAction="#openComparison" prefHeight="36.0" prefWidth="104.0" stylesheets="@../css/buttons.css" text="Compare">
+      <Button fx:id="comparisonButton" layoutX="638.0" layoutY="445.0" mnemonicParsing="false" onAction="#openComparison" prefHeight="36.0" prefWidth="104.0" stylesheets="@../css/buttons.css" text="Compare">
          <styleClass>
             <String fx:value="buttons_small" />
             <String fx:value="my_button" />
