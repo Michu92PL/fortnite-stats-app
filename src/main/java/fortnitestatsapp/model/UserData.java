@@ -2,6 +2,8 @@ package fortnitestatsapp.model;
 
 public class UserData {
 
+        private String platform;
+
         private String accountID;
         private String epicName;
 
@@ -350,6 +352,14 @@ public class UserData {
 
     public void setCurrentTeamKills(String currentTeamKills) {
         this.currentTeamKills = currentTeamKills;
+    }
+
+    public String getPlatform() {
+        return platform;
+    }
+
+    public void setPlatform(String platform) {
+        this.platform = platform;
     }
 
     @Override
