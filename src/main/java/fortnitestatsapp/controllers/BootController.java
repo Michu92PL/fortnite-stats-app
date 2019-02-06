@@ -1,6 +1,7 @@
 package fortnitestatsapp.controllers;
 
 import fortnitestatsapp.model.UserData;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -31,6 +32,14 @@ public class BootController {
 
         ComparisonController controller = loader.getController();
         controller.setPlayer1(player1);
+        controller.setP1StatsLabels();
+        controller.getChoiceBox1().getSelectionModel().select(player1.getPlatform());
+        controller.getP1TextField().setText(player1.getEpicName());
+        controller.getP1nameLabel().setText(player1.getEpicName());
+
+        Platform.runLater(() ->
+                controller.getP2TextField().requestFocus()
+        );
 
         Stage stage = new Stage();
 
@@ -41,7 +50,6 @@ public class BootController {
         stage.setResizable(false);
         stage.setTitle("Comparison mode");
         stage.show();
-
     }
 
     public void loadMenuView() {
