@@ -22,8 +22,8 @@
                            <children>
                               <HBox alignment="CENTER" prefWidth="440.0" spacing="30.0">
                                  <children>
-                                    <TextField />
-                                    <TextField />
+                                    <TextField fx:id="p1TextField" />
+                                    <TextField fx:id="p2TextField" />
                                  </children>
                                  <padding>
                                     <Insets top="20.0" />
@@ -38,7 +38,7 @@
                                     </VBox>
                                     <VBox alignment="CENTER">
                                        <children>
-                                          <Button mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" styleClass="stats_button" stylesheets="@../css/buttons.css" text="Button" />
+                                          <Button fx:id="compareButton" mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" styleClass="stats_button" stylesheets="@../css/buttons.css" text="Compare" />
                                        </children>
                                     </VBox>
                                     <VBox alignment="TOP_RIGHT">
@@ -61,12 +61,12 @@
                <children>
                   <HBox alignment="TOP_CENTER" prefWidth="440.0" spacing="70.0" styleClass="border_top" stylesheets="@../css/containters.css">
                      <children>
-                        <Label text="player1">
+                        <Label fx:id="p1nameLabel" text="player1">
                            <font>
                               <Font name="System Bold Italic" size="24.0" />
                            </font>
                         </Label>
-                        <Label text="player2">
+                        <Label fx:id="p2NameLabel" text="player2">
                            <font>
                               <Font name="System Bold Italic" size="24.0" />
                            </font>
@@ -95,27 +95,27 @@
                                  <children>
                                     <HBox alignment="TOP_RIGHT">
                                        <children>
-                                          <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                          <Label fx:id="p1LifeTimeKD" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                        </children>
                                     </HBox>
                                     <HBox alignment="TOP_RIGHT">
                                        <children>
-                                          <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                          <Label fx:id="p1LifetimeWins" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                        </children>
                                     </HBox>
                                     <HBox alignment="TOP_RIGHT">
                                        <children>
-                                          <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                          <Label fx:id="p1LifetimeMatches" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                        </children>
                                     </HBox>
                                     <HBox alignment="TOP_RIGHT">
                                        <children>
-                                          <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                          <Label fx:id="p1LifetimeWinPercentage" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                        </children>
                                     </HBox>
                                     <HBox alignment="TOP_RIGHT">
                                        <children>
-                                          <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                          <Label fx:id="p1LifetimeKills" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                        </children>
                                     </HBox>
                                  </children>
@@ -124,27 +124,27 @@
                                  <children>
                                     <HBox>
                                        <children>
-                                          <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                          <Label fx:id="p2LifeTimeKD" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                        </children>
                                     </HBox>
                                     <HBox>
                                        <children>
-                                          <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                          <Label fx:id="p2LifetimeWins" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                        </children>
                                     </HBox>
                                     <HBox>
                                        <children>
-                                          <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                          <Label fx:id="p2LifetimeMatches" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                        </children>
                                     </HBox>
                                     <HBox>
                                        <children>
-                                          <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                          <Label fx:id="p2LifetimeWinPercentage" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                        </children>
                                     </HBox>
                                     <HBox>
                                        <children>
-                                          <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                          <Label fx:id="p2LifetimeKills" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                        </children>
                                     </HBox>
                                  </children>
@@ -186,27 +186,27 @@
                            <children>
                               <HBox alignment="TOP_RIGHT">
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p1SoloKD" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox alignment="TOP_RIGHT">
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p1SoloWins" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox alignment="TOP_RIGHT">
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p1SoloMatches" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox alignment="TOP_RIGHT">
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p1SoloWinPercentage" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox alignment="TOP_RIGHT">
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p1SoloKills" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                            </children>
@@ -215,27 +215,27 @@
                            <children>
                               <HBox>
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p2SoloKD" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox>
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p2SoloWins" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox>
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p2SoloMatches" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox>
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p2SoloWinPercentage" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox>
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p2SoloKills" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                            </children>
@@ -275,27 +275,27 @@
                            <children>
                               <HBox alignment="TOP_RIGHT">
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p1DuoKD" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox alignment="TOP_RIGHT">
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p1DuoWins" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox alignment="TOP_RIGHT">
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p1DuoMatches" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox alignment="TOP_RIGHT">
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p1DuoWinPercentage" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox alignment="TOP_RIGHT">
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p1DuoKills" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                            </children>
@@ -304,27 +304,27 @@
                            <children>
                               <HBox>
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p2DuoKD" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox>
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p2DuoWins" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox>
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p2DuoMatches" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox>
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p2DuoWinPercentage" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox>
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p2DuoKills" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                            </children>
@@ -364,27 +364,27 @@
                            <children>
                               <HBox alignment="TOP_RIGHT">
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p1SquadsKD" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox alignment="TOP_RIGHT">
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p1SquadsWins" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox alignment="TOP_RIGHT">
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p1SquadsMatches" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox alignment="TOP_RIGHT">
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p1SquadsWinPercentage" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox alignment="TOP_RIGHT">
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p1SquadsKIlls" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                            </children>
@@ -393,27 +393,27 @@
                            <children>
                               <HBox>
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p2SquadsKD" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox>
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p2SquadsWins" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox>
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p2SquadsMatches" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox>
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p2SquadsWinPercentage" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                               <HBox>
                                  <children>
-                                    <Label styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p2SquadsKIlls" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                            </children>
@@ -436,7 +436,7 @@
                   <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="243.0" spacing="5.0">
                      <children>
                         <Label styleClass="labels_status" stylesheets="@../css/labels.css" text="Status:" />
-                        <Label styleClass="labels_status" stylesheets="@../css/labels.css" />
+                        <Label fx:id="statusLabel" styleClass="labels_status" stylesheets="@../css/labels.css" />
                      </children>
                   </HBox>
                   <Button mnemonicParsing="false" prefHeight="43.0" prefWidth="145.0" styleClass="stats_button" stylesheets="@../css/buttons.css" text="Close" />
