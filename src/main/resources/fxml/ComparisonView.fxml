@@ -33,17 +33,17 @@
                                  <children>
                                     <VBox>
                                        <children>
-                                          <ChoiceBox prefWidth="60.0" />
+                                          <ChoiceBox fx:id="choiceBox1" prefWidth="60.0" />
                                        </children>
                                     </VBox>
                                     <VBox alignment="CENTER">
                                        <children>
-                                          <Button fx:id="compareButton" mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" styleClass="stats_button" stylesheets="@../css/buttons.css" text="Compare" />
+                                          <Button fx:id="compareButton" mnemonicParsing="false" onAction="#compare" prefHeight="43.0" prefWidth="130.0" styleClass="stats_button" stylesheets="@../css/buttons.css" text="Compare" />
                                        </children>
                                     </VBox>
                                     <VBox alignment="TOP_RIGHT">
                                        <children>
-                                          <ChoiceBox prefWidth="60.0" />
+                                          <ChoiceBox fx:id="choiceBox2" prefWidth="60.0" />
                                        </children>
                                     </VBox>
                                  </children>
@@ -59,18 +59,39 @@
             </HBox>
             <VBox>
                <children>
-                  <HBox alignment="TOP_CENTER" prefWidth="440.0" spacing="70.0" styleClass="border_top" stylesheets="@../css/containters.css">
+                  <HBox alignment="CENTER" prefWidth="440.0" spacing="25.0" styleClass="border_top" stylesheets="@../css/containters.css">
                      <children>
-                        <Label fx:id="p1nameLabel" text="player1">
-                           <font>
-                              <Font name="System Bold Italic" size="24.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="p2NameLabel" text="player2">
-                           <font>
-                              <Font name="System Bold Italic" size="24.0" />
-                           </font>
-                        </Label>
+                        <VBox alignment="CENTER_RIGHT" prefWidth="170.0">
+                           <children>
+                              <Label fx:id="p1nameLabel" text="Player 1">
+                                 <font>
+                                    <Font name="System Bold Italic" size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER" prefWidth="24.0">
+                                 <children>
+                                    <Label prefWidth="24.0" text="vs">
+                                       <font>
+                                          <Font name="System Bold Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER_LEFT" prefWidth="170.0">
+                           <children>
+                              <Label fx:id="p2nameLabel" text="Player 2">
+                                 <font>
+                                    <Font name="System Bold Italic" size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
                      </children>
                   </HBox>
                   <HBox alignment="TOP_CENTER" prefWidth="440.0" styleClass="border_top_bottom" stylesheets="@../css/containters.css">
@@ -384,7 +405,7 @@
                               </HBox>
                               <HBox alignment="TOP_RIGHT">
                                  <children>
-                                    <Label fx:id="p1SquadsKIlls" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p1SquadsKills" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                            </children>
@@ -413,7 +434,7 @@
                               </HBox>
                               <HBox>
                                  <children>
-                                    <Label fx:id="p2SquadsKIlls" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
+                                    <Label fx:id="p2SquadsKills" styleClass="labels_comp_sm" stylesheets="@../css/labels.css" />
                                  </children>
                               </HBox>
                            </children>
@@ -436,7 +457,7 @@
                   <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="243.0" spacing="5.0">
                      <children>
                         <Label styleClass="labels_status" stylesheets="@../css/labels.css" text="Status:" />
-                        <Label fx:id="statusLabel" styleClass="labels_status" stylesheets="@../css/labels.css" />
+                        <Label fx:id="statusLabel" />
                      </children>
                   </HBox>
                   <Button mnemonicParsing="false" prefHeight="43.0" prefWidth="145.0" styleClass="stats_button" stylesheets="@../css/buttons.css" text="Close" />
