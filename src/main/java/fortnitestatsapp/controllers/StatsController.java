@@ -192,11 +192,13 @@ public class StatsController {
     }
 
 
+
     @FXML
     public void showStats() {
         if (checkTextField()) {
             UserData user = service.getUserData(choiceBox.getValue().toLowerCase(), nameTextField.getText());
             this.currentUser = user;
+            user.setPlatform(choiceBox.getValue());
             if (checkUserData(user)) {
                 setAllLabels(user);
             } else {
@@ -213,6 +215,7 @@ public class StatsController {
         setUserExist(true);
         return true;
     }
+
 
     private boolean checkTextField() {
         if (nameTextField.getText() == null || nameTextField.getText().trim().isEmpty()) {
