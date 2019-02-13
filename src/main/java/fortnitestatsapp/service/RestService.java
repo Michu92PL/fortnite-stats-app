@@ -4,10 +4,12 @@ import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
+import fortnitestatsapp.dialogs.DialogUtils;
+import fortnitestatsapp.exceptions.PlayerNotFoundException;
 import fortnitestatsapp.model.UserData;
 import org.json.JSONObject;
 
-public class Service {
+public class RestService {
 
     private String URL = "https://api.fortnitetracker.com/v1/profile/";
     //private String platform;
@@ -25,7 +27,8 @@ public class Service {
                     .header(keyName, keyValue)
                     .asJson();
         } catch (UnirestException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            DialogUtils.errorDialog(e);
         }
 
         JSONObject jsonObject = null;
@@ -84,7 +87,7 @@ public class Service {
                 userData.setCurrentTeamKills(jsonObject.getJSONObject("stats").getJSONObject("curr_p9").getJSONObject("kills").get("value").toString());
             }
         } catch (Exception e) {
-            return userData;
+            throw new PlayerNotFoundException("Player not found!");
         }
         return userData;
     }
