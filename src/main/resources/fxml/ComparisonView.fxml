@@ -460,7 +460,7 @@
                         <Label fx:id="statusLabel" />
                      </children>
                   </HBox>
-                  <Button mnemonicParsing="false" prefHeight="43.0" prefWidth="145.0" styleClass="stats_button" stylesheets="@../css/buttons.css" text="Close" />
+                  <Button mnemonicParsing="false" onAction="#close" prefHeight="43.0" prefWidth="145.0" styleClass="stats_button" stylesheets="@../css/buttons.css" text="Close" />
                </children>
                <VBox.margin>
                   <Insets />
