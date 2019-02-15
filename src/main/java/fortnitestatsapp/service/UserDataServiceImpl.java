@@ -47,7 +47,7 @@ public class UserDataServiceImpl implements UserDataService {
     private void generatePlayerException(int errorCode) {
         switch (errorCode) {
             case 3:
-                throw new BothPlayersNotFoundException("Players layers not found!");
+                throw new BothPlayersNotFoundException("Players not found!");
             case 2:
                 throw new SecondPlayerNotFoundException("Player 2 not found!");
             case 1:
