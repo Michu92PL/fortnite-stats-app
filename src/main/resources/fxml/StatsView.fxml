@@ -26,8 +26,8 @@
       <HBox alignment="CENTER" layoutX="23.0" layoutY="20.0" prefHeight="66.0" prefWidth="438.0" spacing="10.0">
          <children>
             <VBox alignment="CENTER" />
-            <TextField fx:id="nameTextField" prefHeight="31.0" prefWidth="168.0" />
-            <ChoiceBox fx:id="choiceBox" prefHeight="31.0" prefWidth="83.0" />
+            <TextField fx:id="nameTextField" prefHeight="31.0" prefWidth="168.0" stylesheets="@../css/textfield.css" />
+            <ChoiceBox fx:id="choiceBox" maxHeight="31.0" maxWidth="83.0" prefHeight="31.0" prefWidth="83.0" stylesheets="@../css/choicebox.css" />
             <Button fx:id="showStatsButton" mnemonicParsing="false" onAction="#showStats" prefHeight="47.0" prefWidth="187.0" styleClass="stats_button" stylesheets="@../css/buttons.css" text="Show stats!">
                <font>
                   <Font name="System Bold" size="15.0" />
@@ -38,12 +38,12 @@
       <Line endX="445.0" layoutX="330.0" layoutY="91.0" startX="-306.0" strokeWidth="2.0" />
       <HBox layoutX="474.0" layoutY="40.0" spacing="8.0">
          <children>
-            <Label alignment="CENTER" text="Acc name:">
+            <Label alignment="CENTER" styleClass="labels_black" stylesheets="@../css/labels.css" text="Acc name:">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="epicNameLabel" alignment="CENTER" contentDisplay="CENTER">
+            <Label fx:id="epicNameLabel" alignment="CENTER" contentDisplay="CENTER" styleClass="labels_black" stylesheets="@../css/labels.css">
                <font>
                   <Font name="System Bold Italic" size="20.0" />
                </font>
@@ -54,7 +54,7 @@
          <children>
             <HBox alignment="CENTER" spacing="40.0">
                <children>
-                  <Label alignment="CENTER" text="Lifetime" textAlignment="CENTER" underline="true">
+                  <Label alignment="CENTER" styleClass="labels_black" stylesheets="@../css/labels.css" text="Lifetime" textAlignment="CENTER" underline="true">
                      <font>
                         <Font name="Comic Sans MS Bold Italic" size="26.0" />
                      </font>
@@ -152,7 +152,7 @@
       </VBox>
       <VBox alignment="CENTER" layoutX="253.0" layoutY="99.0">
          <children>
-            <Label alignment="CENTER" text="Total" underline="true">
+            <Label alignment="CENTER" styleClass="labels_black" stylesheets="@../css/labels.css" text="Total" underline="true">
                <font>
                   <Font name="Comic Sans MS Bold Italic" size="24.0" />
                </font>
@@ -426,7 +426,7 @@
       </VBox>
       <VBox alignment="CENTER" layoutX="51.0" layoutY="333.0">
          <children>
-            <Label alignment="CENTER" text="Current season" underline="true">
+            <Label alignment="CENTER" styleClass="labels_black" stylesheets="@../css/labels.css" text="Current season" underline="true">
                <font>
                   <Font name="Comic Sans MS Bold Italic" size="24.0" />
                </font>
@@ -702,12 +702,12 @@
       <Line endX="-17.0" endY="172.0" layoutX="259.0" layoutY="118.0" startX="-17.0" startY="36.0" />
       <HBox layoutX="40.0" layoutY="540.0" spacing="5.0">
          <children>
-            <Label text="Account ID:">
+            <Label styleClass="labels_black" stylesheets="@../css/labels.css" text="Account ID:">
                <font>
                   <Font size="10.0" />
                </font>
             </Label>
-            <Label fx:id="accountIDLabel">
+            <Label fx:id="accountIDLabel" styleClass="labels_black" stylesheets="@../css/labels.css">
                <font>
                   <Font size="10.0" />
                </font>
