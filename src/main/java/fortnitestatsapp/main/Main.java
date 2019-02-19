@@ -1,8 +1,7 @@
 package fortnitestatsapp.main;
 
-import fortnitestatsapp.model.UserData;
-import fortnitestatsapp.service.Service;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -23,6 +22,7 @@ public class Main extends Application {
         primaryStage.getIcons().add(new Image(this.getClass().getResourceAsStream("/img/icon.png")));
 
         //primaryStage.resizableProperty().setValue(Boolean.FALSE);
+        primaryStage.setOnCloseRequest(event -> Platform.exit());
         primaryStage.setScene(scene);
         primaryStage.setMinWidth(800);
         primaryStage.setMaxWidth(800);
