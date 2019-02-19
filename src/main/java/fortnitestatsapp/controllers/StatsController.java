@@ -1,28 +1,20 @@
 package fortnitestatsapp.controllers;
 
+import fortnitestatsapp.exceptions.PlayerNotFoundException;
 import fortnitestatsapp.model.UserData;
-import fortnitestatsapp.service.Service;
-import javafx.animation.PauseTransition;
+import fortnitestatsapp.service.UserDataService;
+import fortnitestatsapp.service.UserDataServiceImpl;
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
-import javafx.stage.Stage;
-import javafx.util.Duration;
-
-import java.beans.EventHandler;
-import java.io.IOException;
 
 public class StatsController {
 
@@ -39,7 +31,7 @@ public class StatsController {
     @FXML
     private Pane pane;
 
-    private Service service;
+    private UserDataService userDataService;
 
     private BootController bootController;
 
@@ -171,7 +163,7 @@ public class StatsController {
     @FXML
     public void initialize() {
 
-        this.service = new Service();
+        this.userDataService = new UserDataServiceImpl();
         choiceBox.getItems().addAll("PC", "PSN", "XBL");
         choiceBox.getSelectionModel().selectFirst();
         setAllLabelsEmpty();
@@ -196,26 +188,20 @@ public class StatsController {
     @FXML
     public void showStats() {
         if (checkTextField()) {
-            UserData user = service.getUserData(choiceBox.getValue().toLowerCase(), nameTextField.getText());
-            this.currentUser = user;
-            user.setPlatform(choiceBox.getValue());
-            if (checkUserData(user)) {
+            try {
+                UserData user = userDataService.getUser(choiceBox.getValue().toLowerCase(), nameTextField.getText());
+                this.currentUser = user;
+                setUserExist(true);
+                user.setPlatform(choiceBox.getValue());
                 setAllLabels(user);
-            } else {
+
+            }
+            catch (PlayerNotFoundException e){
+                setUserExist(false);
                 setAllLabelsEmpty();
             }
         }
     }
-
-    private boolean checkUserData(UserData user) {
-        if (user.getAccountID() == null) {
-            setUserExist(false);
-            return false;
-        }
-        setUserExist(true);
-        return true;
-    }
-
 
     private boolean checkTextField() {
         if (nameTextField.getText() == null || nameTextField.getText().trim().isEmpty()) {
@@ -225,8 +211,8 @@ public class StatsController {
     }
 
     private void setBackgroundImage() {
-        Image image4 = new Image("/img/statsbgcuttransparent.jpg");
-        BackgroundImage myBI = new BackgroundImage(image4,
+        Image image = new Image("/img/statsBG2.jpg");
+        BackgroundImage myBI = new BackgroundImage(image,
                 BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
         pane.setBackground(new Background(myBI));
@@ -334,8 +320,5 @@ public class StatsController {
         currentTeamWinPercentageLabel.setText(user.getCurrentTeamWinPercentage());
         currentTeamKillsLabel.setText(user.getCurrentTeamKills());
         currentTeamMatchesPlayedLabel.setText(user.getCurrentTeamGamesPlayed());
-
     }
-
-
 }
