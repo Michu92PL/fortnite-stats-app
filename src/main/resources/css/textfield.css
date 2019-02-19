@@ -1,0 +1,10 @@
+.text-field{
+    -fx-background-color: linear-gradient(white, #7ba8ff);
+    -fx-border-width: 0.5;
+    -fx-border-color: black;
+    -fx-text-inner-color: black;
+    -fx-text-fill: black;
+    -fx-font-color: black;
+    -fx-font-size: 21;
+    -fx-padding: 0 0.3em 0 0.3em;
+}
