@@ -8,8 +8,8 @@ public class DialogUtils {
         Alert errorAlert = new Alert(Alert.AlertType.ERROR);
         errorAlert.setHeaderText("Sorry, something went wrong!");
         //e.printStackTrace();
-        //errorAlert.setContentText(e.getMessage());
-        errorAlert.setContentText(e.getCause().toString());
+        errorAlert.setContentText(e.getMessage());
+        //errorAlert.setContentText(e.getCause().toString());
         errorAlert.show();
     }
 }
