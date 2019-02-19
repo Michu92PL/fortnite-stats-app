@@ -37,6 +37,7 @@ public class ComparisonController {
     private static final String COLOR_RED = "-fx-text-fill: red";
     private static final String COLOR_GREEN = "-fx-text-fill: green";
     private static final String COLOR_BLUE = "-fx-text-fill: blue";
+    private static final String COLOR_BLACK = "-fx-text-fill: black";
 
     private UserDataService userDataService;
 
@@ -254,6 +255,7 @@ public class ComparisonController {
     public void compare() {
         if (textFieldsCheck()) {
             if (playersCheck()) {
+                resetColors();
                 try {
                     searchForPlayers();
                 }
@@ -456,6 +458,12 @@ public class ComparisonController {
         colorLabelPair("squadsmatches");
         colorLabelPair("squadswinpercentage");
         colorLabelPair("squadskills");
+    }
+
+    private void resetColors(){
+        for(Label label : getPlayerStatsLabelList()){
+            label.setStyle(COLOR_BLACK);
+        }
     }
 
     public void setPlayerStatsLabels(final String playerNumber, UserData user) {
