@@ -86,7 +86,8 @@ public class RestService {
                 userData.setCurrentTeamGamesPlayed(jsonObject.getJSONObject("stats").getJSONObject("curr_p9").getJSONObject("matches").get("value").toString());
                 userData.setCurrentTeamKills(jsonObject.getJSONObject("stats").getJSONObject("curr_p9").getJSONObject("kills").get("value").toString());
             }
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             throw new PlayerNotFoundException("Player not found!");
         }
         return userData;
