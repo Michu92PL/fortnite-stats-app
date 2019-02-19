@@ -71,7 +71,6 @@ public class UserDataServiceImpl implements UserDataService {
     public UserData getUser2() {
         return user2;
     }
-
 }
 
 
