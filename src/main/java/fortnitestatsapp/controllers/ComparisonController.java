@@ -18,6 +18,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -34,9 +36,12 @@ public class ComparisonController {
     private static final String[] CHOICE_BOX_ELEMENTS = {"PC", "PSN", "XBL"};
     private static final String COLOR_RED = "-fx-text-fill: red";
     private static final String COLOR_GREEN = "-fx-text-fill: green";
-    private static final String COLOR_BLUE = "-fx-text-fill: blue;";
+    private static final String COLOR_BLUE = "-fx-text-fill: blue";
 
     private UserDataService userDataService;
+
+    @FXML
+    private StackPane stackPane;
 
     @FXML
     private ChoiceBox<String> choiceBox1;
@@ -230,6 +235,7 @@ public class ComparisonController {
         userDataService = new UserDataServiceImpl();
         choiceBox1.getItems().addAll(CHOICE_BOX_ELEMENTS);
         choiceBox2.getItems().addAll(CHOICE_BOX_ELEMENTS);
+        setBackgroundImage();
         setLabelText(EMPTY, getPlayerStatsLabelList());
         choiceBox1.getSelectionModel().selectFirst();
         choiceBox2.getSelectionModel().selectFirst();
@@ -250,16 +256,19 @@ public class ComparisonController {
             if (playersCheck()) {
                 try {
                     searchForPlayers();
-                } catch (PlayerNotFoundException e) {
+                }
+                catch (PlayerNotFoundException e) {
                     setErrorStatus(e);
                     setLabelText(EMPTY, getPlayerStatsLabelList());
                     if (e instanceof BothPlayersNotFoundException) {
                         return;
-                    } else if (e instanceof FirstPlayerNotFoundException) {
+                    }
+                    else if (e instanceof FirstPlayerNotFoundException) {
                         this.player2 = userDataService.getUser2();
                         setPlayerStatsLabels("p2", player2);
                         return;
-                    } else if (e instanceof SecondPlayerNotFoundException) {
+                    }
+                    else if (e instanceof SecondPlayerNotFoundException) {
                         this.player1 = userDataService.getUser1();
                         setPlayerStatsLabels("p1", player1);
                         return;
@@ -273,10 +282,12 @@ public class ComparisonController {
                 setPlayerStatsLabels("p2", player2);
                 setStatus("OK", COLOR_GREEN);
                 colorAllLabels();
-            } else {
+            }
+            else {
                 setStatus("Don't test me please :)", COLOR_RED);
             }
-        } else {
+        }
+        else {
             setStatus("Enter proper names!", COLOR_RED);
         }
     }
@@ -300,7 +311,8 @@ public class ComparisonController {
                     try {
                         label = (Label) field.get(this);
                         mapOfLabelPair.put(i++, label);
-                    } catch (IllegalAccessException e) {
+                    }
+                    catch (IllegalAccessException e) {
                         DialogUtils.errorDialog(e);
                     }
                 }
@@ -312,15 +324,20 @@ public class ComparisonController {
     }
 
     private void setColor(Map<Integer, Label> map) {
-        String st1 = map.get(0).getText().replaceAll("\\D+","");
-        String st2 = map.get(1).getText().replaceAll("\\D+","");
-        Long value1 = Long.valueOf(st1);
-        Long value2 = Long.valueOf(st2);
+        String st1 = map.get(0).getText();
+        String st2 = map.get(1).getText();
+
+        if (st1.contains("%") || st2.contains("%")) {
+            st1 = st1.replaceAll("%", "");
+            st2 = st2.replaceAll("%", "");
+        }
+        Double value1 = Double.valueOf(st1);
+        Double value2 = Double.valueOf(st2);
         if (value1 > value2) {
             map.get(0).setStyle(COLOR_GREEN);
             map.get(1).setStyle(COLOR_RED);
         }
-        else if(value1 < value2){
+        else if (value1 < value2) {
             map.get(0).setStyle(COLOR_RED);
             map.get(1).setStyle(COLOR_GREEN);
         }
@@ -343,7 +360,6 @@ public class ComparisonController {
         TextField tf1 = this.p1TextField;
         TextField tf2 = this.p2TextField;
         return checkIfTextFieldsAreFilled(tf1, tf2);
-
     }
 
     private boolean checkIfTextFieldsAreFilled(TextField... textFields) {
@@ -368,8 +384,6 @@ public class ComparisonController {
         String tf1 = this.p1TextField.getText();
         String tf2 = this.p2TextField.getText();
         return checkIfSearchedPlayersAreNotSame(tf1, cb1, tf2, cb2);
-
-
     }
 
     private boolean checkIfSearchedPlayersAreNotSame(String player1, String platform1, String player2, String platform2) {
@@ -399,7 +413,8 @@ public class ComparisonController {
                 try {
                     Label tmp = (Label) field.get(this);
                     list.add(tmp);
-                } catch (IllegalAccessException e) {
+                }
+                catch (IllegalAccessException e) {
                     //e.printStackTrace();
                     DialogUtils.errorDialog(e);
                 }
@@ -420,7 +435,7 @@ public class ComparisonController {
         }
     }
 
-    private void colorAllLabels(){
+    private void colorAllLabels() {
         colorLabelPair("lifetimekd");
         colorLabelPair("lifetimewins");
         colorLabelPair("lifetimematches");
@@ -442,6 +457,7 @@ public class ComparisonController {
         colorLabelPair("squadswinpercentage");
         colorLabelPair("squadskills");
     }
+
     public void setPlayerStatsLabels(final String playerNumber, UserData user) {
         Class clazz = this.getClass();
         Field[] fields = clazz.getDeclaredFields();
@@ -453,7 +469,8 @@ public class ComparisonController {
                     Label label = null;
                     try {
                         label = (Label) field.get(this);
-                    } catch (IllegalAccessException e) {
+                    }
+                    catch (IllegalAccessException e) {
                         DialogUtils.errorDialog(e);
                     }
                     switch (an.label().toLowerCase()) {
@@ -526,6 +543,14 @@ public class ComparisonController {
             }
             field.setAccessible(false);
         }
+    }
+
+    private void setBackgroundImage() {
+        Image image = new Image("/img/comparisonBG.jpg");
+        BackgroundImage myBI = new BackgroundImage(image,
+                BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        stackPane.setBackground(new Background(myBI));
     }
 
     public ChoiceBox<String> getChoiceBox1() {
