@@ -1,0 +1,28 @@
+.choice-box .context-menu {
+    -fx-background-color: linear-gradient(white, #737dd0);
+}
+
+.choice-box .menu-item:focused {
+    -fx-background-color: linear-gradient(white, #669398);
+    -fx-text-fill: black;
+}
+
+.choice-box .menu-item > .label {
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+.choice-box .menu-item:focused > .label {
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+.choice-box {
+    -fx-background-color: linear-gradient(white, #737dd0);
+    -fx-mark-color: black;
+}
+
+.choice-box > .label {
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
