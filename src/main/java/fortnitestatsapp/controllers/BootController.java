@@ -6,13 +6,11 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.List;
 
 public class BootController {
 
@@ -29,8 +27,9 @@ public class BootController {
         StackPane stackPane = null;
         try {
             stackPane = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
+        }
+        catch (IOException e) {
+            DialogUtils.errorDialog(e);
         }
 
         ComparisonController controller = loader.getController();
@@ -63,11 +62,12 @@ public class BootController {
         StackPane stackPane = null;
         try {
             stackPane = loader.load();
-        } catch (Exception e) {
-            e.printStackTrace();
+        }
+        catch (Exception e) {
+            DialogUtils.errorDialog(e);
         }
 
-        Image image = new Image("/img/menuBottomv2Final.png", 800, 600, false, true);
+        Image image = new Image("/img/menubottomBG.png", 800, 600, false, true);
 
         BackgroundImage myBI = new BackgroundImage(image,
                 BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
@@ -90,8 +90,9 @@ public class BootController {
         StackPane stackPane = null;
         try {
             stackPane = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
+        }
+        catch (IOException e) {
+            DialogUtils.errorDialog(e);
         }
 
         Stage stage = new Stage();
