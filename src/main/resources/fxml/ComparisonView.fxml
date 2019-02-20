@@ -38,7 +38,7 @@
                                     </VBox>
                                     <VBox alignment="CENTER">
                                        <children>
-                                          <Button fx:id="compareButton" mnemonicParsing="false" onAction="#compare" prefHeight="43.0" prefWidth="130.0" styleClass="stats_button" stylesheets="@../css/buttons.css" text="Compare" />
+                                          <Button fx:id="compareButton" contentDisplay="CENTER" graphicTextGap="2.0" mnemonicParsing="false" onAction="#compare" prefHeight="43.0" prefWidth="130.0" styleClass="stats_button" stylesheets="@../css/buttons.css" text="Compare" />
                                        </children>
                                     </VBox>
                                     <VBox alignment="TOP_RIGHT">
