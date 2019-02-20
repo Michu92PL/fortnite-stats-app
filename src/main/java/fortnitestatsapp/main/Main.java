@@ -17,6 +17,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/BootView.fxml"));
         StackPane stackPane = loader.load();
+
         Scene scene = new Scene(stackPane);
 
         primaryStage.getIcons().add(new Image(this.getClass().getResourceAsStream("/img/icon.png")));
@@ -24,11 +25,8 @@ public class Main extends Application {
         //primaryStage.resizableProperty().setValue(Boolean.FALSE);
         primaryStage.setOnCloseRequest(event -> Platform.exit());
         primaryStage.setScene(scene);
-        primaryStage.setMinWidth(800);
-        primaryStage.setMaxWidth(800);
-        primaryStage.setMinHeight(600);
-        primaryStage.setMaxHeight(600);
         primaryStage.setResizable(false);
+        primaryStage.sizeToScene();
         primaryStage.setTitle("Fortnite stats");
         primaryStage.show();
     }

@@ -44,15 +44,11 @@ public class BootController {
 
         Stage stage = new Stage();
 
-        stage.setMinWidth(440);
-        stage.setMaxWidth(440);
-        stage.setMinHeight(800);
-        stage.setMaxHeight(840);
-
         Scene scene = new Scene(stackPane);
         stage.getIcons().add(new Image(this.getClass().getResourceAsStream("/img/icon.png")));
         stage.setScene(scene);
         stage.setResizable(false);
+        stage.sizeToScene();
         stage.setTitle("Comparison mode");
         stage.show();
     }
@@ -99,13 +95,9 @@ public class BootController {
 
         Scene scene = new Scene(stackPane);
         stage.getIcons().add(new Image(this.getClass().getResourceAsStream("/img/icon.png")));
-        //primaryStage.resizableProperty().setValue(Boolean.FALSE);
-        stage.setMinWidth(440);
-        stage.setMaxWidth(440);
-        stage.setMinHeight(800);
-        stage.setMaxHeight(840);
         stage.setScene(scene);
         stage.setResizable(false);
+        stage.sizeToScene();
         stage.setTitle("Comparison mode");
         stage.show();
     }
